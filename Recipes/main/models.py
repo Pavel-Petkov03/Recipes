@@ -16,3 +16,6 @@ class Recipe(models.Model):
     description = models.TextField()
     ingredients = models.CharField(max_length=250)
     time = models.IntegerField()
+
+    def split_ingredients(self):
+        return self.ingredients.split(", ")
