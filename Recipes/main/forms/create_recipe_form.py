@@ -26,6 +26,10 @@ class AddRecipeForm(forms.ModelForm):
         'id': "id_time", "type": "text", "name": "time"
     }))
 
+    def disable_fields(self):
+        for (key, value) in self.fields.items():
+            self.fields[key].widget.attrs["disabled"] = True
+
     class Meta:
         model = Recipe
         fields = "__all__"
